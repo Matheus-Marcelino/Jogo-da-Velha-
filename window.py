@@ -23,3 +23,7 @@ class Board:
                            ['', '', ''],
                            ['', '', '']]
 
+    def insert(self, tela: list, data: dict[int, str]) -> list:
+        """Insere uma string no board"""
+        tela[data['key1']][data['key2']] = data['token']
+        return tela
