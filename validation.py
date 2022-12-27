@@ -78,3 +78,21 @@ class Validation():
                     return False
 
         return 'empate'
+
+    def player_move(self, tela: list, player: int, **player_esc) -> list:
+        """Faz o movimento do player"""
+        try:
+            jogada: int = int(input(f'\nJogador {2 if player == 1 else 1}, Faça a sua Jogada: '))
+            if 10 > jogada > 0:
+                return self.__validation(tela, jogada, player,
+                                         player1_esc=player_esc['player1_esc'],
+                                         player2_esc=player_esc['player2_esc'])
+
+            print(Colors.red +'\nEsse local não existe! Escolha outro'+ Colors.end)
+            sleep(1.5)
+            self.player_move(tela, player, player1_esc=player_esc['player1_esc'],
+                                           player2_esc=player_esc['player2_esc'])
+        except ValueError:
+            print(Colors.red +'Apenas numeros inteiros entre 9 e 1'+ Colors.end, '\n')
+            self.player_move(tela, player, player1_esc=player_esc['player1_esc'],
+                                           player2_esc=player_esc['player2_esc'])
