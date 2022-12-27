@@ -42,3 +42,6 @@ class Board:
                                        f'{Colors.yellow}{dynamic_change_position(player2_c, 0, player1_c)}{Colors.end}\n',
               ' ' * 34, Colors.blue +f'Velha{Colors.end}{Colors.white}:{Colors.end} {Colors.blue}{cont_mpt}{Colors.end}', '\n'*2)
 
+    def clear_terminal(self) -> None:
+        """Limpa o terminal"""
+        system("cls") if name == "nt" else system("clear")
