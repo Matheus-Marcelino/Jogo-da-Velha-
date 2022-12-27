@@ -45,3 +45,10 @@ class Board:
     def clear_terminal(self) -> None:
         """Limpa o terminal"""
         system("cls") if name == "nt" else system("clear")
+
+    def clear_board(self, tela: list) -> list:
+        """Retira todas as strings do board"""
+        for i in range(3):
+            for j in range(3):
+                tela[i][j] = ''
+        return tela
