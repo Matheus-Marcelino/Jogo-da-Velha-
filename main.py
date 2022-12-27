@@ -45,6 +45,18 @@ tela = board.tela
 jogador = round_counter = cont_empate = cont_player1 = cont_player2 = 0
 
 try:
+    board.clear_terminal()
+    board.header()
+    board.tutorial()
+    board.clear_terminal()
+
+    board.header()
+    token = None
+
+    while token is None:  # Decisão entre X e O
+        token = validacao.dispenser_token()
+    player1_esc, player2_esc = token[0], token[1]
+
 except KeyboardInterrupt:
     print(Colors.green +'Saindo às pressas? compreendo! até dps ;)'+Colors.end)
     sleep(1.8)
