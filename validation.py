@@ -28,3 +28,13 @@ class Validation():
                             return self.__board.insert(tela,{'key1': key,
                                                              'key2': indice,
                                                              'token':player_esc['player2_esc']})
+                                                             
+        valor_1 = verification(7, 9, key=0)
+        if isinstance(valor_1, list):
+            return valor_1
+        valor_2 = verification(4, 6, key=1)
+        if isinstance(valor_2, list):
+            return valor_2
+        valor_3 = verification(1, 3, key=2)
+        if isinstance(valor_3, list):
+            return valor_3
