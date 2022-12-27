@@ -39,3 +39,13 @@ def decides_winner() -> None:
         write_match_winner(Colors.yellow +'UM EMPATE?? COMO CHEGAMOS ATÉ AQUI?'+ Colors.end, 24, 3)
         jogador = randint(0, 1)
 
+
+board, validacao = Board(), Validation()
+tela = board.tela
+jogador = round_counter = cont_empate = cont_player1 = cont_player2 = 0
+
+try:
+except KeyboardInterrupt:
+    print(Colors.green +'Saindo às pressas? compreendo! até dps ;)'+Colors.end)
+    sleep(1.8)
+
