@@ -57,6 +57,21 @@ try:
         token = validacao.dispenser_token()
     player1_esc, player2_esc = token[0], token[1]
 
+    while True:
+        while round_counter != 6:
+            board.clear_terminal()
+            board.header()
+            board.points_table(jogador, round_counter, cont_empate, cont_player1, cont_player2)
+            board.show(tela)
+            validacao.player_move(tela, jogador, player1_esc=player1_esc, player2_esc=player2_esc)
+
+            ganhador = validacao.winner(tela)
+            match ganhador:
+                case False:
+                    jogador = (jogador + 1) % 2
+                    continue
+
+
 except KeyboardInterrupt:
     print(Colors.green +'Saindo às pressas? compreendo! até dps ;)'+Colors.end)
     sleep(1.8)
