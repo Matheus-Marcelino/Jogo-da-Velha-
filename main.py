@@ -71,6 +71,29 @@ try:
                     jogador = (jogador + 1) % 2
                     continue
 
+                case 'X':
+                    round_counter += 1
+                    if player1_esc == 'X':
+                        cont_player1 += 1
+                        write_winner_round(Colors.green +'O JOGADOR 1 VENCEU'+ Colors.end, 33, 2, 2)
+                    else:
+                        cont_player2 += 1
+                        write_winner_round(Colors.green +'O JOGADOR 2 VENCEU'+ Colors.end, 33, 2, 2)
+
+                case 'O':
+                    round_counter += 1
+                    if player1_esc == 'O':
+                        cont_player1 += 1
+                        write_winner_round(Colors.green +'O JOGADOR 1 VENCEU'+ Colors.end, 33, 2, 2)
+                    else:
+                        cont_player2 += 1
+                        write_winner_round(Colors.green +'O JOGADOR 2 VENCEU'+ Colors.end, 33, 2, 2)
+
+                case 'empate':
+                    cont_empate += 1
+                    write_winner_round(Colors.green +'O JOGO DEU VELHA'+ Colors.end, 33, 2, 2)
+                    jogador = randint(0, 1)
+
 
 except KeyboardInterrupt:
     print(Colors.green +'Saindo às pressas? compreendo! até dps ;)'+Colors.end)
