@@ -27,3 +27,9 @@ class Board:
         """Insere uma string no board"""
         tela[data['key1']][data['key2']] = data['token']
         return tela
+
+    def points_table(self, player: int, round_c: int, cont_mpt: int, player1_c: int, player2_c: int) -> None:
+        """Tabela para a aparição dos pontos"""
+        def dynamic_change_position(key: int, key_2: int, key_3: int) -> int:
+            """Muda dinâmicamente os valores de acordo com a condição"""
+            return key if player == key_2 else key_3
