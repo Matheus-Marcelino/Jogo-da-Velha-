@@ -51,3 +51,30 @@ class Validation():
                 self.__board.clear_terminal()
                 self.__board.header()
                 print(Colors.red +'\nEscolha apenas entre X ou O'+Colors.end)
+
+    def winner(self, tela: list) -> (str | bool):
+        """Verifica quem foi o ganhador"""
+        for i in range(3):  # Linhas
+            if tela[i][0] == tela[i][1] and \
+               tela[i][1] == tela[i][2] and tela[i][0] != '':
+                return tela[i][0]
+
+        for j in range(3):  # Colunas
+            if tela[0][j] == tela[1][j] and \
+               tela[1][j] == tela[2][j] and tela[0][j] != '':
+                return tela[0][j]
+
+        if tela[0][0] != '' and tela[0][0] == tela[1][1] and \
+           tela[1][1] == tela[2][2]:  # Diagonal principal
+            return tela[0][0]
+
+        if tela[0][2] != '' and tela[0][2] == tela[1][1] and \
+           tela[1][1] == tela[2][0]:  # Diagonal secundaria
+            return tela[0][2]
+
+        for i in range(3):
+            for j in range(3):
+                if tela[i][j] == '':  # Verificando se não há impate
+                    return False
+
+        return 'empate'
