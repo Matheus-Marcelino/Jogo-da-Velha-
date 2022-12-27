@@ -3,6 +3,7 @@ from os import system, name
 from time import sleep
 from colorama import init
 
+
 class Colors:
     """Cores para os textos"""
     init()
@@ -52,3 +53,30 @@ class Board:
             for j in range(3):
                 tela[i][j] = ''
         return tela
+
+    def header(self) -> None:
+        """Mostra o cabeçalho"""
+        print(' ' * 25, Colors.pink + '-=-' * 11 + Colors.end)
+        print(' ' * 35, Colors.white + 'JOGO DA VELHA' + Colors.end)
+        print(' ' * 25, Colors.pink + '-=-' * 11 + Colors.end, '\n' * 3)
+
+    def tutorial(self) -> None:
+        """Mostra um tutorial simples de como mexer no board"""
+        print(' ' * 13,'Os números indicam o mesmo campo onde será colocado o '
+                        f'{Colors.green}X{Colors.end} e o {Colors.green}O{Colors.end}\n')
+        print(f'{7:>35}   |{8:^7}|{9:>3}')
+        print(' ' * 28, '=-=' * 9)
+        print(f'{4:>35}   |{5:^7}|{6:>3}')
+        print(' ' * 28, '=-=' * 9)
+        print(f'{1:>35}   |{2:^7}|{3:>3}')
+        sleep(10)
+        print('\n', ' ' * 36, Colors.yellow +'Bom Jogo!'+ Colors.end)
+        sleep(1.5)
+
+    def show(self, tela: list) -> None:
+        """Mostra o board na tela"""
+        print(f'{tela[0][0]:>35}   |{tela[0][1]:^7}|{tela[0][2]:>3}')
+        print(' ' * 28, '=-=' * 9)
+        print(f'{tela[1][0]:>35}   |{tela[1][1]:^7}|{tela[1][2]:>3}')
+        print(' ' * 28, '=-=' * 9)
+        print(f'{tela[2][0]:>35}   |{tela[2][1]:^7}|{tela[2][2]:>3}')
