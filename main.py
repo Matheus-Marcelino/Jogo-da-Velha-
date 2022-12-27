@@ -94,8 +94,9 @@ try:
                     write_winner_round(Colors.green +'O JOGO DEU VELHA'+ Colors.end, 33, 2, 2)
                     jogador = randint(0, 1)
 
-
+        decides_winner()
+        round_counter = cont_empate = cont_player1 = cont_player2 = 0
+        write_match_winner(Colors.yellow +'Reiniciando o sistema...'+ Colors.end, 30, 3)
 except KeyboardInterrupt:
     print(Colors.green +'Saindo às pressas? compreendo! até dps ;)'+Colors.end)
     sleep(1.8)
-
