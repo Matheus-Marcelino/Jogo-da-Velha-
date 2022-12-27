@@ -38,3 +38,16 @@ class Validation():
         valor_3 = verification(1, 3, key=2)
         if isinstance(valor_3, list):
             return valor_3
+
+    def dispenser_token(self) -> (tuple | None):
+        """Separa os tokens para os players"""
+        decisao: str = str(input('Jogador 1, Escolha entre X ou O: ')).strip().upper()
+        match decisao:
+            case 'X':
+                return ('X', 'O')
+            case 'O':
+                return ('O', 'X')
+            case _:
+                self.__board.clear_terminal()
+                self.__board.header()
+                print(Colors.red +'\nEscolha apenas entre X ou O'+Colors.end)
