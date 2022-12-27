@@ -24,3 +24,18 @@ def write_match_winner(text: str, space: int, delay: int) -> None:
     sleep(delay)
 
 
+def decides_winner() -> None:
+    """Decide quem foi o ganhador"""
+    if cont_empate < cont_player1 > cont_player2:
+        write_match_winner(Colors.green +'PARABÉNS, O JOGADOR 1 VENCEU!'+ Colors.end, 27, 3)
+    elif cont_empate < cont_player2 > cont_player1:
+        write_match_winner(Colors.green +'PARABÉNS, O JOGADOR 2 VENCEU!'+ Colors.end, 27, 3)
+    elif cont_player2 < cont_empate > cont_player1:
+        write_match_winner(Colors.yellow +'OS DOIS PERDERAM, A VELHA VENCEU!!'+ Colors.end, 25, 3)
+    elif cont_player1 == cont_player2 == cont_empate:
+        write_match_winner(Colors.yellow +'TODOS EMPATARAM???? IMPOSSÍVEL!'+ Colors.end, 26, 3)
+        jogador = randint(0, 1)
+    else:
+        write_match_winner(Colors.yellow +'UM EMPATE?? COMO CHEGAMOS ATÉ AQUI?'+ Colors.end, 24, 3)
+        jogador = randint(0, 1)
+
