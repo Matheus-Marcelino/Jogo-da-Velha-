@@ -33,3 +33,12 @@ class Board:
         def dynamic_change_position(key: int, key_2: int, key_3: int) -> int:
             """Muda dinâmicamente os valores de acordo com a condição"""
             return key if player == key_2 else key_3
+
+        print(' ' * 34,Colors.underline + Colors.yellow +f'Vez do jogador {dynamic_change_position(2, 1, 1) }'+ Colors.end, '\n')
+        print(' ' * 34, Colors.blue +f' Rodada{Colors.end}{Colors.white}:{Colors.end} {Colors.blue}{round_c}/5{Colors.end}\n',
+              ' ' * 34, Colors.yellow +f'Jogador {dynamic_change_position(2, 1, 1)}{Colors.end}{Colors.white}:{Colors.end} '
+                                       f'{Colors.yellow}{dynamic_change_position(player2_c, 1, player1_c)}{Colors.end}\n',
+              ' ' * 34, Colors.yellow +f'Jogador {dynamic_change_position(2, 0, 1)}{Colors.end}: '
+                                       f'{Colors.yellow}{dynamic_change_position(player2_c, 0, player1_c)}{Colors.end}\n',
+              ' ' * 34, Colors.blue +f'Velha{Colors.end}{Colors.white}:{Colors.end} {Colors.blue}{cont_mpt}{Colors.end}', '\n'*2)
+
